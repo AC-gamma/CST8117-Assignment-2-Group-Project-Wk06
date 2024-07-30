@@ -1,0 +1,229 @@
+/*** Website Wide ***/
+:root {
+    --white: #FFFDFA;
+    --gray: #272626;
+    --primary: #34349C;
+    --secondary: #DF9430;
+    --accent: #DFCF30;
+
+    --mainfont: "Montserrat", sans-serif;
+    --secondfont: "Oswald", sans-serif;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+html {
+    background-color: var(--white);
+    font-size: 16px;
+    color: var(--gray);
+}
+
+body {
+    margin: 0 auto;
+    font-family: var(--mainfont);
+    line-height: 1.75em;
+}
+
+/*** Elements ***/
+a {
+    color: var(--secondary);
+    font-weight: 500;
+    text-decoration: 1px underline dotted;
+    text-underline-offset: 5px;
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+form {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 10% 40% 40%;
+}
+
+form label {
+    text-align: right;
+    margin-right: 15px;
+}
+
+form input[type="text"], form input[type="tel"], form input[type="email"], form input[type="number"], form textarea {
+    font-size: 16px;
+    grid-column: 2 / span 2;
+    padding: 5px;
+}
+
+form button {
+    background-color: var(--secondary);
+    border: 1px solid var(--secondary);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px 20px;
+}
+
+form button:hover {
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    transition: all 500ms linear 0s;
+}
+
+form button[type="submit"] {
+    grid-column: 2 / 2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--secondfont);
+    color: var(--primary);
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+h1 {
+    font-size: 2.822em;
+}
+
+h2 {
+    font-size: 2.654em;
+}
+
+h3 {
+    font-size: 2.479em;
+}
+
+h4 {
+    font-size: 2.323em;
+}
+
+h5 {
+    font-size: 2.178em;
+}
+
+h6 {
+    font-size: 2.041em;
+}
+
+nav ul {
+    margin: 0;
+}
+
+nav li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+nav li a {
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table th {
+    background-color: var(--gray);
+    color: var(--white);
+    font-weight: 500;
+    border: 1px solid var(--gray);
+    padding: 5px 15px;
+}
+
+table th:not(:last-child) {
+    border-right-color: var(--white);
+}
+
+table td {
+    border: 1px solid var(--gray);
+    padding: 5px 15px;
+}
+
+/*** Classes ***/
+.button {
+    background-color: var(--secondary);
+    border: 1px solid var(--secondary);
+    color: var(--white);
+    font-weight: 500;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    transition: all 500ms linear 0s;    
+}
+
+.footer-container {
+    background-color: var(--gray);
+    color: var(--white);
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center space-around;
+    height: 100px;
+}
+
+.footer-container .footer-left {
+    place-self: center left;
+}
+
+.footer-container .footer-mid p {
+    margin: 0;
+    text-align: center;
+}
+
+.footer-container .footer-right {
+    place-self: center right;
+}
+
+.footer-right #nav-footer a:hover {
+    color: var(--white);
+}
+
+.header-container {    
+    display: grid;
+    grid-auto-flow: column;
+    margin: 10px auto;
+    max-width: 80%;
+    place-content: center space-between;
+    width: 80%;
+}
+
+.header-container img {
+    height: 75px;
+}
+
+.header-container #nav-header {
+    place-self: center;
+}
+
+.header-container #nav-header, .header-container #nav-header ul {
+    margin: 0;
+}
+
+.hero-container {
+    background-color: var(--gray);
+    color: var(--white);
+    display: grid;
+    grid-auto-flow: row;
+    height: 400px;
+    place-content: center;
+}
+
+.hero-container h1 {
+    color: var(--white);
+    margin: 0;
+}
+
+.hero-container p {
+    font-size: 24px;
+    text-align: center;
+}
+
+.main-container {
+    margin: 40px auto;
+    width: 90vw;
+}
