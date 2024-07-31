@@ -213,6 +213,7 @@ table td {
 
 .header-container #nav-header {
     place-self: center;
+    letter-spacing: 1px;
 }
 
 .header-container #nav-header, .header-container #nav-header ul {
