@@ -75,6 +75,11 @@ form button[type="submit"] {
     grid-column: 2 / 2;
 }
 
+footer {
+    background-color: var(--gray);
+    width: 100%;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--secondfont);
     color: var(--primary);
@@ -158,16 +163,26 @@ table td {
 }
 
 .footer-container {
-    background-color: var(--gray);
     color: var(--white);
     display: grid;
     grid-auto-flow: column;
-    place-content: center space-around;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
     height: 100px;
+    place-content: center space-around;
+    width: 75%;
 }
 
 .footer-container .footer-left {
     place-self: center left;
+}
+
+.footer-container .footer-left .social-media {
+    width: 30px;
+}
+
+.footer-container .footer-left .social-media:first-child {
+    margin-right: 10px;
 }
 
 .footer-container .footer-mid p {
