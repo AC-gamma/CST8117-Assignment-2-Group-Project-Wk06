@@ -1,3 +1,15 @@
+.blog-item .button {
+    border-radius: 7px;
+}
+
+.blog-item img {
+    border-radius: 7px;
+}
+
+.blog-title {
+    text-align: center;
+}
+
 .main-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

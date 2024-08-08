@@ -15,9 +15,10 @@
 }
 
 html {
+    color: var(--gray);
     background-color: var(--white);
     font-size: 16px;
-    color: var(--gray);
+    scroll-behavior: smooth;
 }
 
 body {
@@ -36,6 +37,7 @@ a {
 
 a:hover {
     color: var(--primary);
+    transition: all 150ms linear 0s;    
 }
 
 form {
@@ -89,28 +91,29 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: .75em;
 }
 
+/* 1.125 ratio / Major Second  */
 h1 {
-    font-size: 2.822em;
+    font-size: 2.281em;
 }
 
 h2 {
-    font-size: 2.654em;
+    font-size: 2.027em;
 }
 
 h3 {
-    font-size: 2.479em;
+    font-size: 1.802em;
 }
 
 h4 {
-    font-size: 2.323em;
+    font-size: 1.602em;
 }
 
 h5 {
-    font-size: 2.178em;
+    font-size: 1.424em;
 }
 
 h6 {
-    font-size: 2.041em;
+    font-size: 1.266em;
 }
 
 nav ul {
@@ -147,6 +150,34 @@ table td {
     padding: 5px 15px;
 }
 
+/*** ID ***/
+#nav-footer a:hover {
+    color: var(--white);
+}
+
+#nav-footer li:not(:last-child):after {
+    content: "|";
+    margin-left: 3px;
+    margin-right: 3px;    
+}
+
+#nav-header {
+    font-size: 18px;
+    letter-spacing: 1px;
+    place-self: center;
+}
+
+#nav-footer, #nav-header, #nav-footer ul, #nav-header ul {
+    margin: 0;
+    padding: 0;
+}
+
+#nav-header li:not(:last-child):after {
+    content: "|";
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 /*** Classes ***/
 .button {
     background-color: var(--secondary);
@@ -161,7 +192,7 @@ table td {
     background-color: transparent;
     border: 1px solid var(--primary);
     color: var(--primary);
-    transition: all 500ms linear 0s;    
+    transition: all 150ms linear 0s;    
 }
 
 .footer-container {
@@ -196,10 +227,6 @@ table td {
     place-self: center right;
 }
 
-.footer-right #nav-footer a:hover {
-    color: var(--white);
-}
-
 .header-container {    
     display: grid;
     grid-auto-flow: column;
@@ -211,15 +238,6 @@ table td {
 
 .header-container img {
     height: 75px;
-}
-
-.header-container #nav-header {
-    place-self: center;
-    letter-spacing: 1px;
-}
-
-.header-container #nav-header, .header-container #nav-header ul {
-    margin: 0;
 }
 
 .hero-container {
@@ -242,11 +260,16 @@ table td {
     margin: 0;
 }
 
-.hero-container p {
-    font-size: 24px;
+.icon {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(94%) saturate(0%) hue-rotate(176deg) brightness(110%) contrast(70%);
 }
 
 .main-container {
     margin: 60px auto;
     width: 80vw;
+}
+
+.subheading {
+    font-size: 24px;
+    line-height: 1.6em;
 }
