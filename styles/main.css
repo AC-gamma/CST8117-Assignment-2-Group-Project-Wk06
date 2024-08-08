@@ -15,9 +15,10 @@
 }
 
 html {
+    color: var(--gray);
     background-color: var(--white);
     font-size: 16px;
-    color: var(--gray);
+    scroll-behavior: smooth;
 }
 
 body {
@@ -36,22 +37,24 @@ a {
 
 a:hover {
     color: var(--primary);
+    transition: all 150ms linear 0s;    
 }
 
 form {
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: 10% 40% 40%;
+    grid-template-columns: 10% repeat(3, 1fr);
 }
 
 form label {
-    text-align: right;
+    grid-column: 1;
     margin-right: 15px;
+    text-align: right;
 }
 
 form input[type="text"], form input[type="tel"], form input[type="email"], form input[type="number"], form textarea {
     font-size: 16px;
-    grid-column: 2 / span 2;
+    grid-column: 2 / span 3;
     padding: 5px;
 }
 
@@ -61,7 +64,8 @@ form button {
     color: var(--white);
     font-size: 16px;
     font-weight: 500;
-    padding: 15px 20px;
+    margin-top: 15px;
+    padding: 10px 20px;
 }
 
 form button:hover {
@@ -72,7 +76,7 @@ form button:hover {
 }
 
 form button[type="submit"] {
-    grid-column: 2 / 2;
+    grid-column: 3;
 }
 
 footer {
@@ -83,32 +87,33 @@ footer {
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--secondfont);
     color: var(--primary);
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: .75em;
+    margin-bottom: .75em;
 }
 
+/* 1.125 ratio / Major Second  */
 h1 {
-    font-size: 2.822em;
+    font-size: 2.281em;
 }
 
 h2 {
-    font-size: 2.654em;
+    font-size: 2.027em;
 }
 
 h3 {
-    font-size: 2.479em;
+    font-size: 1.802em;
 }
 
 h4 {
-    font-size: 2.323em;
+    font-size: 1.602em;
 }
 
 h5 {
-    font-size: 2.178em;
+    font-size: 1.424em;
 }
 
 h6 {
-    font-size: 2.041em;
+    font-size: 1.266em;
 }
 
 nav ul {
@@ -145,6 +150,34 @@ table td {
     padding: 5px 15px;
 }
 
+/*** ID ***/
+#nav-footer a:hover {
+    color: var(--white);
+}
+
+#nav-footer li:not(:last-child):after {
+    content: "|";
+    margin-left: 3px;
+    margin-right: 3px;    
+}
+
+#nav-header {
+    font-size: 18px;
+    letter-spacing: 1px;
+    place-self: center;
+}
+
+#nav-footer, #nav-header, #nav-footer ul, #nav-header ul {
+    margin: 0;
+    padding: 0;
+}
+
+#nav-header li:not(:last-child):after {
+    content: "|";
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 /*** Classes ***/
 .button {
     background-color: var(--secondary);
@@ -159,7 +192,7 @@ table td {
     background-color: transparent;
     border: 1px solid var(--primary);
     color: var(--primary);
-    transition: all 500ms linear 0s;    
+    transition: all 150ms linear 0s;    
 }
 
 .footer-container {
@@ -194,10 +227,6 @@ table td {
     place-self: center right;
 }
 
-.footer-right #nav-footer a:hover {
-    color: var(--white);
-}
-
 .header-container {    
     display: grid;
     grid-auto-flow: column;
@@ -211,35 +240,36 @@ table td {
     height: 75px;
 }
 
-.header-container #nav-header {
-    place-self: center;
-    letter-spacing: 1px;
-}
-
-.header-container #nav-header, .header-container #nav-header ul {
-    margin: 0;
-}
-
 .hero-container {
     background-color: var(--gray);
     color: var(--white);
     display: grid;
     grid-auto-flow: row;
     height: 400px;
-    place-content: center;
+    place-content: center center;
+    text-align: center;
 }
 
-.hero-container h1 {
+.hero-container div {
+    width: 80%;
+    justify-self: center;
+}
+
+.hero-container .page-title {
     color: var(--white);
     margin: 0;
 }
 
-.hero-container p {
-    font-size: 24px;
-    text-align: center;
+.icon {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(94%) saturate(0%) hue-rotate(176deg) brightness(110%) contrast(70%);
 }
 
 .main-container {
-    margin: 40px auto;
-    width: 90vw;
+    margin: 60px auto;
+    width: 80vw;
+}
+
+.subheading {
+    font-size: 24px;
+    line-height: 1.6em;
 }
