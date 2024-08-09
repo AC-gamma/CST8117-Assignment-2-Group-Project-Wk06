@@ -17,7 +17,7 @@
 html {
     color: var(--gray);
     background-color: var(--white);
-    font-size: 16px;
+    font-size: 18px;
     scroll-behavior: smooth;
 }
 
@@ -72,7 +72,7 @@ form button:hover {
     background-color: transparent;
     border: 1px solid var(--primary);
     color: var(--primary);
-    transition: all 500ms linear 0s;
+    transition: all 150ms linear 150ms;
 }
 
 form button[type="submit"] {
@@ -157,7 +157,7 @@ table td {
 
 #nav-footer li:not(:last-child):after {
     content: "|";
-    margin-left: 3px;
+    margin-left: 6px;
     margin-right: 3px;    
 }
 
@@ -203,7 +203,7 @@ table td {
     margin: 0 auto;
     height: 100px;
     place-content: center space-around;
-    width: 75%;
+    width: 95%;
 }
 
 .footer-container .footer-left {
@@ -230,8 +230,9 @@ table td {
 .header-container {    
     display: grid;
     grid-auto-flow: column;
-    margin: 10px auto;
+    margin: 0 auto;
     max-width: 80%;
+    padding-top: 30px;
     place-content: center space-between;
     width: 80%;
 }
@@ -257,6 +258,7 @@ table td {
 
 .hero-container .page-title {
     color: var(--white);
+    line-height: 1.5em;
     margin: 0;
 }
 
@@ -272,6 +274,9 @@ table td {
 .subheading {
     font-size: 24px;
     line-height: 1.6em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
 }
 
 /* modal */

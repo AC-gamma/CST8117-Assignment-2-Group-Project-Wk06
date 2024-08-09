@@ -1,3 +1,11 @@
+header {
+    background: linear-gradient(180deg, rgba(39,38,38,.45) 0%, rgba(39,38,38,0.45) 100%), url("../images/partners-hero.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .main-container h2 {
     margin-top: 50px;
     margin-bottom: 20px;
@@ -45,12 +53,17 @@
     padding: 10px 15px;
 }
 
+.header-container, .header-container a {
+    color: var(--white);
+}
+
+.header-container a:hover {
+    color: var(--accent);
+    transition: all 150ms linear 150ms;   
+}
+
 .hero-container {
-    background: linear-gradient(180deg, rgba(39,38,38,.45) 0%, rgba(39,38,38,0.45) 100%), url("../images/partners-hero.png");
-    background-attachment: fixed;
-    background-position: center
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: transparent;
 }
 
 .partners-list {

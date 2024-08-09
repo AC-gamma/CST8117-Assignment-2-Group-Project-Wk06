@@ -1,0 +1,53 @@
+article{
+    margin: 60px auto;
+    width: 80%;
+}
+
+.full-post1 {
+    background: linear-gradient(180deg, rgba(39,38,38,.5) 0%, rgba(39,38,38,0.5) 100%), url("../images/pexels-pixabay-163064.jpg");
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.full-post2 {
+    background: linear-gradient(180deg, rgba(39,38,38,.5) 0%, rgba(39,38,38,0.5) 100%), url("../images/pexels-theo-decker-5946211.jpg");
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.full-post3 {
+    background: linear-gradient(180deg, rgba(39,38,38,.5) 0%, rgba(39,38,38,0.5) 100%), url("../images/Premium Photo _ Human Resources Recruitment and People Networking.jpg");
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* .full-post4 {
+    background: linear-gradient(180deg, rgba(39,38,38,.5) 0%, rgba(39,38,38,0.5) 100%), url("../images/pexels-theo-decker-5946211.jpg");
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+.full-post5 {
+    background: linear-gradient(180deg, rgba(39,38,38,.5) 0%, rgba(39,38,38,0.5) 100%), url("../images/pexels-vlada-karpovich-7434022.jpg");
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.full-post6 {
+    background: linear-gradient(180deg, rgba(39,38,38,.5) 0%, rgba(39,38,38,0.5) 100%), url("../images/pexels-yankrukov-7792845.jpg");
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
