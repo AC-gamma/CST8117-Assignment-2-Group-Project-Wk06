@@ -5,6 +5,10 @@
     --calendar-hover-bg-clr: #DF9430;
 }
 
+.top-header a {
+    cursor: pointer;
+}
+
 main {
     padding-bottom: 100px;
 }
@@ -230,115 +234,4 @@ li.event-day:hover::after {
 
 #event-details-container .button:hover {
     cursor: pointer;
-}
-
-/* modal */
-.modal-container {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-}
-
-.modal-container.active-modal {
-    pointer-events: all;
-    transition: backdrop-filter 1s ease-in-out;
-    backdrop-filter: blur(5px) brightness(50%);
-}
-
-.modal {
-    pointer-events: all;
-    /* transition: transform 1s ease-in-out; */
-    transform: translateY(-400vh);
-    animation: slide-out 1000ms ease-in-out;
-    width: 80vw;
-    min-width: 500px;
-    max-width: 700px;
-    padding: 25px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-}
-
-.modal.no-animation 
-{
-  animation: none;
-}
-
-.modal-container.active-modal .modal {
-    animation: slide-in 1000ms ease-in-out;
-    transform: translateY(0);
-}
-
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-}
-
-.close-modal {
-    border: none;
-    background: transparent;
-    margin-right: 14px;
-    width: 50px;
-}
-
-.close-modal img {
-    width: 100%;
-}
-
-.close-modal:hover {
-    cursor: pointer;
-}
-
-.modal-body {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.modal form {
-    grid-template-columns: 100px repeat(5, 1fr);
-}
-
-.modal form input {
-    grid-column: 2 / span 5;
-}
-
-.modal form button {
-    grid-column: 3 / 5;
-}
-
-@keyframes slide-in {
-    0% {
-        transform: translateY(-400vh);
-    }
-
-    90% {
-        transform: translateY(8vh);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes slide-out {
-    0% {
-        transform: translateY(0);
-    }
-
-    10% {
-        transform: translateY(8vh);
-    }
-
-    100% {
-        transform: translateY(-400vh);
-    }
 }

@@ -273,3 +273,162 @@ table td {
     font-size: 24px;
     line-height: 1.6em;
 }
+
+/* modal */
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.modal-container.active-modal {
+    pointer-events: all;
+    transition: backdrop-filter 1s ease-in-out;
+    backdrop-filter: blur(5px) brightness(50%);
+}
+
+.modal {
+    pointer-events: all;
+    transform: translateY(-400vh);
+    animation: slide-out 1000ms ease-in-out;
+    width: 80vw;
+    min-width: 500px;
+    max-width: 700px;
+    padding: 25px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.modal.no-animation 
+{
+  animation: none;
+}
+
+.modal-container.active-modal .modal {
+    animation: slide-in 1000ms ease-in-out;
+    transform: translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.close-modal {
+    border: none;
+    background: transparent;
+    margin-right: 14px;
+    width: 50px;
+}
+
+.close-modal img {
+    width: 100%;
+}
+
+.disabled {
+    display: none;
+}
+
+.close-modal:hover {
+    cursor: pointer;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal form {
+    grid-template-columns: 100px repeat(5, 1fr);
+}
+
+.modal form input {
+    grid-column: 2 / span 5;
+}
+
+.modal form button {
+    grid-column: 3 / 5;
+}
+
+.top-header {
+    place-content: end;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+form#user-login-form,
+form#user-register-form {
+    grid-template-columns: 175px repeat(5, 1fr);
+}
+
+form#user-login-form input,
+form#user-register-form input {
+    grid-column: 2 / span 4;
+}
+
+#user-login .modal-header,
+#user-register .modal-header {
+    display: grid;
+    grid-template: auto/repeat(3, 33%);
+}
+
+#user-login .modal-header h2,
+#user-register .modal-header h2 {
+    justify-self: center;
+    grid-column: 2;
+}
+
+#user-login .modal-header button,
+#user-register .modal-header button {
+    justify-self: end;
+    grid-column: 3;
+}
+
+#extra-login-btn, 
+#extra-register-btn {
+    cursor: pointer;
+}
+
+.d-none {
+    display: none;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(-400vh);
+    }
+
+    90% {
+        transform: translateY(8vh);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateY(0);
+    }
+
+    10% {
+        transform: translateY(8vh);
+    }
+
+    100% {
+        transform: translateY(-400vh);
+    }
+}

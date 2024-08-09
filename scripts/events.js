@@ -1,4 +1,5 @@
 import eventsData from "./eventsData.js";
+import { openModal } from "./modal.js";
 
 const calendar = document.querySelector("#calendar");
 const calendarHeaderData = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"]
@@ -6,31 +7,6 @@ const calendarDateArr = [29, 30, 31, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 
 let selectedDt = null;
 let selectedDateText = '';
 let calendarData = "";
-
-// modal
-const modalContainer = document.querySelector('.modal-container');
-const close = document.querySelector('.close-modal');
-
-const openModal = (eventID) => {
-    document.querySelector('body').style.overflow = 'hidden';
-    modalContainer.querySelector('.modal').classList.remove("no-animation");
-    modalContainer.querySelector('.modal-title').textContent = `Attend The ${eventsData.find(ev => ev.id == eventID).name}`;
-    modalContainer.classList.add('active-modal');
-}
-
-const closeModal = () => {
-    modalContainer.classList.remove('active-modal');
-    document.querySelector('body').style.overflow = 'initial';
-}
-close.addEventListener('click', closeModal);
-
-modalContainer.querySelector("form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const registerName = modalContainer.querySelector("form #name").value;
-    alert(`You've successfully Registered, See you there ${registerName}.`);
-    closeModal();
-});
-// modal end
 
 calendarHeaderData.forEach((header) => {
     calendarData += `<li>${header}</li>`;
@@ -130,7 +106,7 @@ calendar.querySelectorAll(".new-date").forEach(day => {
                     document.getElementById('event-details-container').scrollIntoView();
 
                     document.querySelector("#event-details-container a").addEventListener("click", (e) => {
-                        openModal(e.target.id);
+                        openModal("event-register", e.target.id);
                     });
                 });
             });
