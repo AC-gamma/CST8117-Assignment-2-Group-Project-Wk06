@@ -14,6 +14,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <link rel="stylesheet" type="text/css" href="./styles/events.css">
 
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
 
@@ -22,6 +23,18 @@
 
 <body>
     <header>
+        <div class="top-header header-container">
+            <nav id="nav-header">
+                <ul id="user-not-logged">
+                    <li><a id="login-btn">Login</a></li>
+                    <li><a id="register-btn">Register</a></li>
+                </ul>
+                <ul id="user-logged">
+                    <li></li>
+                    <li><a id="signout-btn">Sign out</a></li>
+                </ul>
+            </nav>
+        </div>
         <div class="header-container">
             <a href="index.html"><img src="./images/inspire_connect_logo_wide.png" id="logo-header"
                     alt="Inspire Connect Logo"></a>
@@ -36,8 +49,68 @@
                 </ul>
             </nav>
         </div>
+
+        
     </header>
     <main>
+        <div class="modal-container">
+            <div class="modal no-animation disabled" id="event-register">
+                <div class="modal-header">
+                    <h2 class="modal-title"></h2>
+                    <button type="button" class="close-modal">
+                        <img src="./images/close_icon.png">
+                    </button>
+                </div>
+    
+                <div class="modal-body">
+                    <form id="event-register-form" class="modal-form">
+                        <label for="name">Name:</label><input type="text" name="name" id="event-register-name" required>
+                        <label for="email">Email:</label><input type="email" name="email" required>
+                        <label for="cellphone">Cellphone:</label><input type="tel" name="cellphone" required>
+                        <button class="button" type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal no-animation disabled" id="user-register">
+                <div class="modal-header">
+                    <h2 class="modal-title">Register</h2>
+                    <button type="button" class="close-modal">
+                        <img src="./images/close_icon.png">
+                    </button>
+                </div>
+    
+                <div class="modal-body">
+                    <form id="user-register-form" class="modal-form">
+                        <label for="name">Name:</label><input type="text" name="name" required>
+                        <label for="email">Email:</label><input type="email" name="email" required>
+                        <label for="pass1">Password:</label><input type="password" name="pass1" required>
+                        <label for="pass2">Confirm password:</label><input type="password" name="pass2" required>
+                        <button class="button" type="submit">Register</button>
+                    </form>
+                </div>
+                <p class="txt-center">Already have an account? <a id="extra-login-btn">Login from here</a></p>
+            </div>
+
+            <div class="modal no-animation disabled" id="user-login">
+                <div class="modal-header">
+                    <h2 class="modal-title">Login</h2>
+                    <button type="button" class="close-modal">
+                        <img src="./images/close_icon.png">
+                    </button>
+                </div>
+    
+                <div class="modal-body">
+                    <form id="user-login-form" class="modal-form">
+                        <label for="email">Email:</label><input type="email" name="email" required>
+                        <label for="pass">Password:</label><input type="password" name="pass" required>
+                        <button class="button" type="submit">Login</button>
+                    </form>
+                </div>
+                <p class="txt-center">Don't have an account? <a id="extra-register-btn">Register from here</a></p>
+            </div>
+        </div>
+
         <section>
             <header class="hero-container">
                 <div>
@@ -46,70 +119,21 @@
             </header>
 
             <div class="main-container">
-                <h1>This is an H1 heading</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in ullamcorper tellus. Nullam
-                    bibendum
-                    dolor non hendrerit cursus. Pellentesque at nisl hendrerit, vehicula turpis ac, ullamcorper ligula.
-                    Fusce
-                    congue sapien sed justo faucibus pellentesque. Maecenas varius et velit at convallis. Duis in cursus
-                    mauris.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <a href="#">This is an example link</a>
-                <h2>This is an H2 heading</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in ullamcorper tellus. Nullam
-                    bibendum
-                    dolor non hendrerit cursus. Pellentesque at nisl hendrerit, vehicula turpis ac, ullamcorper ligula.
-                    Fusce
-                    congue sapien sed justo faucibus pellentesque. Maecenas varius et velit at convallis. Duis in cursus
-                    mauris.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <ul>
-                    <li>List item 1</li>
-                    <li>List item 2</li>
-                    <li>List item 3</li>
-                </ul>
-                <h3>This is an H3 heading</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in ullamcorper tellus. Nullam
-                    bibendum
-                    dolor non hendrerit cursus. Pellentesque at nisl hendrerit, vehicula turpis ac, ullamcorper ligula.
-                    Fusce
-                    congue sapien sed justo faucibus pellentesque. Maecenas varius et velit at convallis. Duis in cursus
-                    mauris.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <a href="#" class="button">Link as a button</a>
+                <div class="event-calendar-container">
+                    <h2>
+                        August 2024
+                    </h2>
+                    <ul id="calendar">
 
-                <h2>Tables</h2>
-                <table>
-                    <tr>
-                        <th>Table Header 1</th>
-                        <th>Table Header 2</th>
-                        <th>Table Header 3</th>
-                    </tr>
-                    <tr>
-                        <td>Cell 1</td>
-                        <td>Cell 2</td>
-                        <td>Cell 3</td>
-                    </tr>
-                    <tr>
-                        <td>Cell 4</td>
-                        <td>Cell 5</td>
-                        <td>Cell 6</td>
-                    </tr>
-                    <tr>
-                        <td>Cell 7</td>
-                        <td>Cell 8</td>
-                        <td>Cell 9</td>
-                    </tr>
-                </table>
+                    </ul>
+                </div>
 
-                <h2>Form</h2>
-                <form>
-                    <label for="name">Name:</label><input type="text" name="name" id="name">
-                    <label for="email">Email:</label><input type="email" name="email" id="email">
-                    <label for="cellphone">Cellphone:</label><input type="tel" name="cellphone" id="cellphone">
-                    <button type="submit">Submit</button>
-                    <button type="reset">Reset</button>
-                </form>
+                <div class="events-per-date-container">
+                    <p>10th</p>
+                    <ul id="events-list">
+                        <span id="no-events-text">No Events</span>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
@@ -138,6 +162,9 @@
             </div>
         </div>
     </footer>
+    <script type="module" src="./scripts/eventsData.js"></script>
+    <script type="module" src="./scripts/events.js"></script>
+    <script type="module" src="./scripts/modal.js"></script>
 </body>
 
 </html>

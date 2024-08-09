@@ -1,0 +1,237 @@
+:root {
+    --border-color: #80808043;
+    --text-color-calendar: #272626e1;
+    --text-color-faded: #2726268a;
+    --calendar-hover-bg-clr: #DF9430;
+}
+
+.top-header a {
+    cursor: pointer;
+}
+
+main {
+    padding-bottom: 100px;
+}
+
+.main-container {
+    display: flex;
+    gap: 2vw;
+}
+
+.event-calendar-container {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 1.25/1;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    padding-right: 30px;
+}
+
+.event-calendar-container h2 {
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    margin: 0px 50px;
+    padding: 25px 0px;
+}
+
+#calendar,
+.events-per-date-container ul,
+#event-details-container ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+#calendar {
+    flex: 1;
+    display: grid;
+    grid-template: repeat(6, 1fr)/repeat(7, 1fr);
+    min-width: 100%;
+    min-height: 100%;
+    gap: 10px;
+}
+
+#calendar li {
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60px;
+    transition: all 0.25s ease-in-out;
+}
+
+#calendar li:nth-child(-n + 7) {
+    font-weight: bold;
+}
+
+#calendar li:nth-child(n + 8) {
+    color: var(--text-color-calendar);
+}
+
+#calendar li.old-date {
+    color: var(--text-color-faded);
+}
+
+#calendar li.old-date:hover {
+    cursor: pointer;
+    background-color: #80808017;
+}
+
+#calendar li.new-date:hover {
+    cursor: pointer;
+    background-color: var(--calendar-hover-bg-clr);
+    color: white;
+}
+
+li.event-day::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-color: var(--calendar-hover-bg-clr);
+    transform: translateY(20px);
+    border-radius: 60px;
+}
+
+li.event-day:hover::after {
+    background-color: white;
+}
+
+#calendar li.selected {
+    background-color: var(--calendar-hover-bg-clr);
+    color: white;
+}
+
+.events-per-date-container {
+    flex: 1;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.events-per-date-container>p {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    padding: 20px;
+    font-size: larger;
+    border: 1px solid var(--calendar-hover-bg-clr);
+    border-radius: 50%;
+    color: var(--calendar-hover-bg-clr);
+    font-weight: bold;
+}
+
+#events-list {
+    border-top: 1px solid var(--border-color);
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#events-list>li {
+    display: flex;
+    gap: 20px;
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#events-list>li:hover {
+    cursor: pointer;
+}
+
+#event-card-img-container {
+    width: 100px;
+}
+
+#event-card-img-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+#event-card-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+#event-card-details-container h6 {
+    margin: 0;
+}
+
+#event-card-details-container ul {
+    display: flex;
+    gap: 5px;
+    align-self: end;
+}
+
+#event-card-details-container ul li {
+    background-color: var(--text-color-faded);
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: 500;
+}
+
+#event-details-container {
+    margin-top: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#event-details-container>*:not(#event-detail-image, .button) {
+    width: 50%;
+}
+
+#event-detail-image {
+    height: 400px;
+    width: 100%;
+    background-image: url(./images/Innovate\ Summit\ 2024.jpeg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: opacity(0.25) grayscale(0.5);
+    margin-bottom: 100px;
+}
+
+#event-header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#event-details-container ul {
+    display: flex;
+    gap: 10px;
+}
+
+#event-details-container ul li {
+    background-color: #2726269e;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: 500;
+}
+
+#event-detail-desc {
+    font-size: larger;
+    text-align: justify;
+}
+
+#event-details-container .button {
+    justify-self: center;
+}
+
+#event-details-container .button:hover {
+    cursor: pointer;
+}
