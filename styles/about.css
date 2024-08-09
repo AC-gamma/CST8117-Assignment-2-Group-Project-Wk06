@@ -1,7 +1,44 @@
-.hero-container {
+header {
     background: linear-gradient(180deg, rgba(39,38,38,.45) 0%, rgba(39,38,38,0.45) 100%), url("../images/about-hero.png");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.about-laura {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    place-items: center;
+}
+
+.about-laura div {
+    place-content: center;
+}
+
+.about-laura img {
+    height: 500px;
+}
+
+.header-container, .header-container a {
+    color: var(--white);
+}
+
+.header-container a:hover {
+    color: var(--accent);
+    transition: all 150ms linear 0s;   
+}
+
+.hero-container {
+    background-color: transparent;
+}
+
+.mission-values {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.mission-values h2 {
+    text-align: center;
 }
