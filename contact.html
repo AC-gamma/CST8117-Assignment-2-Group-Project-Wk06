@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Gamaliel Cabana">
-    <meta name="email" content="90541124989@algonquincdistudent.ca">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +21,18 @@
 
 <body>
     <header>
+        <section class="top-header">
+            <nav id="nav-header">
+                <ul id="user-not-logged">
+                    <li><a id="login-btn">Login</a></li>
+                    <li><a id="register-btn">Register</a></li>
+                </ul>
+                <ul id="user-logged">
+                    <li></li>
+                    <li><a id="signout-btn">Sign out</a></li>
+                </ul>
+            </nav>
+        </section>
         <section class="header-container">
             <a href="index.html"><img src="./images/inspire_connect_logo_wide_white.png" id="logo-header"
                     alt="Inspire Connect Logo"></a>
@@ -45,6 +55,63 @@
         </section>
     </header>
     <main>
+        <div class="modal-container">
+            <div class="modal no-animation disabled" id="event-register">
+                <div class="modal-header">
+                    <h2 class="modal-title"></h2>
+                    <button type="button" class="close-modal">
+                        <img src="./images/close_icon.png">
+                    </button>
+                </div>
+    
+                <div class="modal-body">
+                    <form id="event-register-form" class="modal-form">
+                        <label for="name">Name:</label><input type="text" name="name" id="event-register-name" required>
+                        <label for="email">Email:</label><input type="email" name="email" required>
+                        <label for="cellphone">Cellphone:</label><input type="tel" name="cellphone" required>
+                        <button class="button" type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal no-animation disabled" id="user-register">
+                <div class="modal-header">
+                    <h2 class="modal-title">Register</h2>
+                    <button type="button" class="close-modal">
+                        <img src="./images/close_icon.png">
+                    </button>
+                </div>
+    
+                <div class="modal-body">
+                    <form id="user-register-form" class="modal-form">
+                        <label for="name">Name:</label><input type="text" name="name" required>
+                        <label for="email">Email:</label><input type="email" name="email" required>
+                        <label for="pass1">Password:</label><input type="password" name="pass1" required>
+                        <label for="pass2">Confirm password:</label><input type="password" name="pass2" required>
+                        <button class="button" type="submit">Register</button>
+                    </form>
+                </div>
+                <p class="txt-center">Already have an account? <a id="extra-login-btn">Login from here</a></p>
+            </div>
+
+            <div class="modal no-animation disabled" id="user-login">
+                <div class="modal-header">
+                    <h2 class="modal-title">Login</h2>
+                    <button type="button" class="close-modal">
+                        <img src="./images/close_icon.png">
+                    </button>
+                </div>
+    
+                <div class="modal-body">
+                    <form id="user-login-form" class="modal-form">
+                        <label for="email">Email:</label><input type="email" name="email" required>
+                        <label for="pass">Password:</label><input type="password" name="pass" required>
+                        <button class="button" type="submit">Login</button>
+                    </form>
+                </div>
+                <p class="txt-center">Don't have an account? <a id="extra-register-btn">Register from here</a></p>
+            </div>
+        </div>
         <section>
             <div class="main-container">
                 <div class="main-inner-container">
@@ -146,6 +213,9 @@
             </div>
         </div>
     </footer>
+    <script type="module" src="./scripts/eventsData.js"></script>
+    <script type="module" src="./scripts/events.js"></script>
+    <script type="module" src="./scripts/modal.js"></script>
 </body>
 
 </html>

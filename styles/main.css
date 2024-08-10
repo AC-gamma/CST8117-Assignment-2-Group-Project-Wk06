@@ -48,11 +48,12 @@ form {
 
 form label {
     grid-column: 1;
-    margin-right: 15px;
+    margin-right: 3px;
     text-align: right;
 }
 
-form input[type="text"], form input[type="tel"], form input[type="email"], form input[type="number"], form textarea {
+form input[type="text"], form input[type="tel"], form input[type="email"], form input[type="number"], form input[type="password"], form textarea {
+    border-radius: 3px;;
     font-size: 16px;
     grid-column: 2 / span 3;
     padding: 5px;
@@ -162,7 +163,7 @@ table td {
 }
 
 #nav-header {
-    font-size: 18px;
+    color: var(--white);
     letter-spacing: 1px;
     place-self: center;
 }
@@ -173,15 +174,22 @@ table td {
 }
 
 #nav-header li:not(:last-child):after {
+    color: var(--white);
     content: "|";
     margin-left: 5px;
     margin-right: 5px;
+}
+
+#nav-header a:hover {
+    color: var(--accent);
+    transition: all 150ms linear 0s;   
 }
 
 /*** Classes ***/
 .button {
     background-color: var(--secondary);
     border: 1px solid var(--secondary);
+    border-radius: 8px;
     color: var(--white);
     font-weight: 500;
     padding: 10px 20px;
@@ -331,8 +339,11 @@ table td {
 .close-modal {
     border: none;
     background: transparent;
-    margin-right: 14px;
-    width: 50px;
+    /* margin-right: 14px; */
+    position: relative;
+    right: -15px;
+    top: -35px;
+    width: 30px;
 }
 
 .close-modal img {
@@ -366,20 +377,36 @@ table td {
 }
 
 .top-header {
-    place-content: end;
+    background-color: rgba(39, 38, 38, .75);
+    font-size: 14px;
+    font-weight: normal;
+    text-align: right;
+    padding: 10px 40px;
+}
+
+.top-header a, .top-header li {
+    color: var(--white);
+    cursor: pointer;
 }
 
 .txt-center {
+    font-size: 14px;
     text-align: center;
 }
 
-form#user-login-form,
 form#user-register-form {
+    grid-template-columns: 185px repeat(2, 1fr);
+}
+
+form#user-register-form .button {
+    grid-column: 2 / span 2;
+}
+
+form#user-login-form {
     grid-template-columns: 175px repeat(5, 1fr);
 }
 
-form#user-login-form input,
-form#user-register-form input {
+form#user-login-form input {
     grid-column: 2 / span 4;
 }
 
