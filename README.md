@@ -3,7 +3,7 @@
 
 | Role | Name |
 | --- | --- |
-| Team Leader | Ujjawal |
-| Front End Designer  | Gamma |
+| Team Leader | Gamma |
+| Front End Designer  | Ujjawal, Gamma |
 | Front End Developer  | Shady |
 | User Experience Developer | Jordan |
